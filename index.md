@@ -8,8 +8,6 @@ description: Dot Clash privacy policy, terms of service, and related legal docum
 
 Official legal documents for **Dot Clash**, the Dots and Boxes mobile game for iOS and Android.
 
-Fill in `_data/legal.yml` before publishing (entity name, contact email, address, dates, and URLs).
-
 <ul class="legal-index">
   <li>
     <a href="{{ site.data.legal.privacy_policy_path | relative_url }}">Privacy Policy</a><br>
@@ -28,5 +26,3 @@ Fill in `_data/legal.yml` before publishing (entity name, contact email, address
     <span>For this website only.</span>
   </li>
 </ul>
-
-<p><em>Not legal advice. Have qualified counsel review before launch.</em></p>

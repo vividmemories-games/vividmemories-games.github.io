@@ -8,7 +8,7 @@ Static legal pages for Dot Clash (Privacy Policy, Terms, EULA, Cookie Policy). H
 2. Install Ruby, then:
 
 ```bash
-cd docs
+cd vividmemories-games.github.io
 bundle install
 bundle exec jekyll serve
 ```
