@@ -19,16 +19,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630cea9d9a406fb2174f9dfc9 # v4.2.2
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+      - name: Setup Ruby and build
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ruby-bundler ruby-dev build-essential
+          bundle install --jobs 4 --retry 3
+          bundle exec jekyll build --destination _site
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@56afc609e742ecce949b7cd334633ee99470446c # v3.0.1
         with:
           path: _site
 
@@ -41,4 +42,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac9416a25249ec6cadfaf92f231b9d69 # v4.0.5
