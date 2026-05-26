@@ -17,9 +17,10 @@ Need help with Dot Clash, your account, privacy, or ads?
 1. Open **Dot Clash**
 2. Go to **Settings**
 3. Tap **Contact us**
-4. Fill in the form — we usually reply by email within a few business days
+4. Tap **Email support** — your mail app opens with a pre-filled message
+5. Describe your issue and send — we usually reply within a few business days
 
-## Email
+## Email directly
 
 If you cannot use the app, email [{{ legal.contact_email }}](mailto:{{ legal.contact_email }}).
 
