@@ -10,9 +10,9 @@ kramdown:
 
 permalink: pretty
 
-# Set when deploying (GitHub Pages project site example):
+# User/org site at domain root — leave baseurl empty.
 url: "https://vividmemories-games.github.io"
-baseurl: "/Dot_Clash"
+# baseurl: ""
 
 exclude:
   - legal/

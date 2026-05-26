@@ -16,7 +16,13 @@ Open [http://localhost:4000](http://localhost:4000).
 
 ## GitHub Pages
 
-This repo is a **user/org site** (`vividmemories-games.github.io`). Push to `main` — GitHub Pages serves the repo root.
+This repo is a **user/org site** (`vividmemories-games.github.io`). Jekyll source is the **repo root** (not `/docs`).
+
+1. Repo → **Settings** → **Pages** → **Build and deployment**
+2. **Source:** GitHub Actions (uses `.github/workflows/pages.yml`)
+3. Push to `main` — the workflow builds and deploys
+
+If you previously used **Deploy from branch → `/docs`**, switch to **GitHub Actions** or set the folder to **`/ (root)`**. The `/docs` setting causes `style.scss` / missing-directory build failures because this site has no `docs/` folder.
 
 Published URLs (with `permalink: pretty`):
 
