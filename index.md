@@ -25,4 +25,18 @@ Official legal documents for **Dot Clash**, the Dots and Boxes mobile game for i
     <a href="{{ site.data.legal.cookie_policy_path | relative_url }}">Cookie Policy</a><br>
     <span>For this website only.</span>
   </li>
+  <li>
+    <a href="{{ site.data.legal.contact_path | relative_url }}">Contact Us</a><br>
+    <span>Support via the app or email.</span>
+  </li>
+  <li>
+    <a href="{{ site.data.legal.delete_data_path | relative_url }}">Delete Your Data</a><br>
+    <span>In-app account deletion instructions.</span>
+  </li>
+  <li>
+    <a href="{{ site.data.legal.privacy_choices_path | relative_url }}">Privacy Choices</a><br>
+    <span>Ad consent and privacy settings.</span>
+  </li>
 </ul>
+
+<p><em>Not legal advice. Have qualified counsel review before launch.</em></p>

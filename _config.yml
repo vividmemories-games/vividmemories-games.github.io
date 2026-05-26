@@ -12,7 +12,7 @@ permalink: pretty
 
 # Set when deploying (GitHub Pages project site example):
 url: "https://vividmemories-games.github.io"
-# baseurl: "/Dot_Clash"
+baseurl: "/Dot_Clash"
 
 exclude:
   - legal/

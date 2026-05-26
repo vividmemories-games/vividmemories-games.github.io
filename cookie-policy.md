@@ -25,7 +25,7 @@ Cookies are small text files stored on your device when you visit a website. Sim
 
 **Analytics cookies (if enabled)**
 
-- We may use analytics on this Site to understand traffic. If enabled, you will be asked for consent where required by law.
+- We may use analytics on this Site to understand traffic. If enabled, you will be asked for consent where required by law. **We do not currently use analytics or a consent banner on this Site.**
 
 The Dot Clash **mobile App** uses **Firebase Analytics** as described in the [Privacy Policy]({{ privacy_url }}), not this Cookie Policy.
 
@@ -33,7 +33,7 @@ The Dot Clash **mobile App** uses **Firebase Analytics** as described in the [Pr
 
 You can control cookies through your browser settings (block, delete, or limit cookies). Blocking essential cookies may affect how the Site works.
 
-Where required, we show a consent banner before non-essential cookies are set.
+Where required, we show a consent banner before non-essential cookies are set. **We do not currently set non-essential cookies on this Site.**
 
 ## Changes
 

@@ -143,7 +143,11 @@ Depending on your location, you may have rights to **access**, **correct**, **de
 
 **Account and data deletion**
 
-Email [{{ legal.contact_email }}](mailto:{{ legal.contact_email }}) with subject **"Dot Clash Account Deletion"** and include your display name and sign-in method (Google, Apple, or guest). We will delete or anonymize your Firebase account and Firestore profile within **{{ legal.deletion_sla }}**, except where we must retain data for legal obligations.
+**In the app (recommended):** Open Dot Clash → **Settings** → **Legal & privacy** → **Delete my account**. This immediately deletes your Firebase account and Firestore profile (progress, match history, and related data). Local app data on the device is cleared when you sign out.
+
+**If you cannot use the app:** Email [{{ legal.contact_email }}](mailto:{{ legal.contact_email }}) with subject **"Dot Clash Account Deletion"** and include your display name and sign-in method (Google, Apple, or guest). We will process the request within **{{ legal.deletion_sla }}**, except where we must retain data for legal obligations.
+
+See [Delete your data]({{ site.data.legal.delete_data_path | absolute_url }}) for details.
 
 **California (CCPA/CPRA)**
 

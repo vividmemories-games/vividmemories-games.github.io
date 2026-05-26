@@ -1,6 +1,6 @@
 # Dot Clash — Legal site (Jekyll)
 
-Static legal pages for Dot Clash (Privacy Policy, Terms, EULA, Cookie Policy). Host on **GitHub Pages**, Netlify, or any static host.
+Static legal pages for Dot Clash. Published at **https://vividmemories-games.github.io** via GitHub Pages (this repo).
 
 ## Setup
 
@@ -8,7 +8,6 @@ Static legal pages for Dot Clash (Privacy Policy, Terms, EULA, Cookie Policy). H
 2. Install Ruby, then:
 
 ```bash
-cd vividmemories-games.github.io
 bundle install
 bundle exec jekyll serve
 ```
@@ -17,9 +16,7 @@ Open [http://localhost:4000](http://localhost:4000).
 
 ## GitHub Pages
 
-1. Repo → **Settings** → **Pages** → Source: **Deploy from branch**
-2. Branch: `main` (or your default), folder: **`/docs`**
-3. Set `url` and `baseurl` in `_config.yml` if using a project site (`https://user.github.io/RepoName/`)
+This repo is a **user/org site** (`vividmemories-games.github.io`). Push to `main` — GitHub Pages serves the repo root.
 
 Published URLs (with `permalink: pretty`):
 
@@ -30,8 +27,11 @@ Published URLs (with `permalink: pretty`):
 | Terms | `/terms-and-conditions/` |
 | EULA | `/eula/` |
 | Cookie Policy | `/cookie-policy/` |
+| Contact Us | `/contact/` |
+| Delete Your Data | `/delete-data/` |
+| Privacy Choices | `/privacy-choices/` |
 
-Use the **Privacy Policy** URL in AdMob UMP (plan A3) and store privacy forms.
+Use the **Privacy Policy** URL in AdMob UMP and store privacy forms. Use **Delete Your Data** and **Contact** URLs in App Store / Play Console compliance fields.
 
 ## Files
 
@@ -42,7 +42,13 @@ Use the **Privacy Policy** URL in AdMob UMP (plan A3) and store privacy forms.
 | `terms-and-conditions.md` | Terms of service |
 | `eula.md` | Optional license |
 | `cookie-policy.md` | Website cookies only |
-| `legal/` | Legacy Word export + combined markdown |
+| `contact.md` | Support (in-app form primary) |
+| `delete-data.md` | In-app deletion instructions |
+| `privacy-choices.md` | Ad consent / privacy choices |
+
+## Dot Clash app repo
+
+The Flutter app lives in a separate repo (`Dot_Clash`). Legal URL constants in `lib/core/env/app_env.dart` must match this site.
 
 ## Personalized ads
 
