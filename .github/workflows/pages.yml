@@ -21,17 +21,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Ruby and build
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ruby-bundler ruby-dev build-essential
-          bundle install --jobs 4 --retry 3
-          bundle exec jekyll build --destination _site
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
 
   deploy:
     needs: build
