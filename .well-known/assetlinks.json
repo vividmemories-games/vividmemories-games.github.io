@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.vividmemories.dotclash",
+      "sha256_cert_fingerprints": [
+        "62:35:81:90:E8:1F:9F:F4:B9:C2:4A:7B:CC:55:C5:6C:90:7E:66:3C:B6:54:6B:BC:A7:7E:53:E7:4B:5C:1C:94",
+        "7B:9B:9F:D7:03:21:F3:6E:1A:9E:25:C6:AD:CE:8C:72:52:F2:93:A1:1E:60:AC:9B:56:0E:0A:80:2F:0B:C4:7B"
+      ]
+    }
+  }
+]
