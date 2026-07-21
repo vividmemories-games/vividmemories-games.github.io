@@ -1,0 +1,116 @@
+---
+layout: null
+title: Download Dot Clash
+description: Get Dot Clash for iOS and Android — free on the App Store and Google Play.
+permalink: /download/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}" />
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:description" content="{{ page.description }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:image" content="{{ site.url }}{{ '/assets/images/dot-clash-download.jpg' | relative_url }}" />
+  <style>
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: #000;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      max-width: 100vw;
+      max-height: 100vh;
+      max-height: 100dvh;
+      line-height: 0;
+    }
+
+    .hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 100vh;
+      max-height: 100dvh;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    /* Invisible hit targets over the badge artwork in the promo image. */
+    .hotspot {
+      position: absolute;
+      display: block;
+      z-index: 2;
+      border-radius: 0.6em;
+      /* Keep links usable but visually invisible over the artwork. */
+      background: transparent;
+      color: transparent;
+      font-size: 0;
+      overflow: hidden;
+      text-indent: -9999px;
+      white-space: nowrap;
+    }
+
+    .hotspot:focus-visible {
+      outline: 3px solid #ff4fd8;
+      outline-offset: 3px;
+      background: rgba(255, 79, 216, 0.12);
+    }
+
+    /* Percentages relative to the 1536×1024 promo artwork. */
+    .hotspot.app-store {
+      left: 12.5%;
+      top: 85.2%;
+      width: 22%;
+      height: 11%;
+    }
+
+    .hotspot.play-store {
+      left: 65.5%;
+      top: 85.2%;
+      width: 24.5%;
+      height: 11%;
+    }
+  </style>
+</head>
+<body>
+  <main class="hero">
+    <img
+      src="{{ '/assets/images/dot-clash-download.jpg' | relative_url }}"
+      width="1536"
+      height="1024"
+      alt="Dot Clash — a childhood classic, reimagined. Now on the App Store and Google Play."
+    />
+    <a
+      class="hotspot app-store"
+      href="{{ site.data.app.app_store_url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Download Dot Clash on the App Store"
+    >App Store</a>
+    <a
+      class="hotspot play-store"
+      href="{{ site.data.app.play_store_url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Get Dot Clash on Google Play"
+    >Google Play</a>
+  </main>
+</body>
+</html>
