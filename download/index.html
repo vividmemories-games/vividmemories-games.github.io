@@ -1,0 +1,270 @@
+---
+layout: null
+title: Download Dot Clash
+description: Get Dot Clash for iOS and Android — free on the App Store and Google Play.
+permalink: /download/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}" />
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:description" content="{{ page.description }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --navy: #0a1628;
+      --navy-mid: #12253f;
+      --ink: #f4f7ff;
+      --muted: #9aabc6;
+      --gold: #ffc44d;
+      --gold-deep: #e6a820;
+      --line: rgba(255, 196, 77, 0.28);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Outfit", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255, 196, 77, 0.16), transparent 55%),
+        radial-gradient(ellipse 70% 50% at 100% 100%, rgba(45, 110, 180, 0.22), transparent 50%),
+        radial-gradient(ellipse 50% 40% at 0% 80%, rgba(20, 60, 110, 0.35), transparent 45%),
+        linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 55%, #0e1e35 100%);
+      overflow-x: hidden;
+    }
+
+    .dots {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image:
+        radial-gradient(circle, rgba(255, 196, 77, 0.55) 1.2px, transparent 1.3px);
+      background-size: 36px 36px;
+      background-position: 0 0;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%);
+      animation: drift 28s linear infinite;
+    }
+
+    @keyframes drift {
+      from { background-position: 0 0; }
+      to { background-position: 36px 36px; }
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 3rem) 1.25rem;
+      text-align: center;
+    }
+
+    .brand {
+      font-family: "Syne", sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.75rem, 10vw, 4.75rem);
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+      margin: 0;
+      background: linear-gradient(120deg, #fff8e8 0%, var(--gold) 45%, #ffe9a8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: rise 0.8s ease-out both;
+    }
+
+    .headline {
+      font-family: "Syne", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.15rem, 3.2vw, 1.55rem);
+      letter-spacing: -0.02em;
+      margin: 1.1rem 0 0;
+      color: var(--ink);
+      animation: rise 0.8s ease-out 0.12s both;
+    }
+
+    .lede {
+      max-width: 26rem;
+      margin: 0.85rem auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.55;
+      font-weight: 500;
+      animation: rise 0.8s ease-out 0.22s both;
+    }
+
+    .stores {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      justify-content: center;
+      margin-top: 2rem;
+      animation: rise 0.8s ease-out 0.34s both;
+    }
+
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 11.5rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--navy);
+      background: var(--gold);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .store-btn:hover,
+    .store-btn:focus-visible {
+      transform: translateY(-2px);
+      background: #ffd36a;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+      outline: none;
+    }
+
+    .store-btn:active {
+      transform: translateY(0);
+    }
+
+    .store-btn.play {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--line);
+      box-shadow: none;
+    }
+
+    .store-btn.play:hover,
+    .store-btn.play:focus-visible {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 196, 77, 0.55);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .store-btn svg {
+      flex-shrink: 0;
+      width: 1.55rem;
+      height: 1.55rem;
+    }
+
+    .store-btn .label {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.15;
+      text-align: left;
+    }
+
+    .store-btn .eyebrow {
+      font-size: 0.68rem;
+      font-weight: 500;
+      opacity: 0.75;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .store-btn .name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .foot {
+      margin-top: 2.75rem;
+      font-size: 0.85rem;
+      color: rgba(154, 171, 198, 0.85);
+      animation: rise 0.8s ease-out 0.45s both;
+    }
+
+    .foot a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .foot a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .dots,
+      .brand,
+      .headline,
+      .lede,
+      .stores,
+      .foot {
+        animation: none;
+      }
+      .store-btn {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dots" aria-hidden="true"></div>
+  <main class="page">
+    <h1 class="brand">{{ site.data.app.app_name }}</h1>
+    <p class="headline">Download &amp; play</p>
+    <p class="lede">{{ site.data.app.tagline }}</p>
+
+    <div class="stores">
+      <a class="store-btn" href="{{ site.data.app.app_store_url }}" rel="noopener noreferrer" target="_blank">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+          <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+        </svg>
+        <span class="label">
+          <span class="eyebrow">Download on the</span>
+          <span class="name">App Store</span>
+        </span>
+      </a>
+
+      <a class="store-btn play" href="{{ site.data.app.play_store_url }}" rel="noopener noreferrer" target="_blank">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+          <path d="M3.18 23.04a1.5 1.5 0 0 1-.68-1.27V2.23c0-.55.28-1.04.68-1.27l.14-.07 11.37 11.37v.14L3.32 23.11l-.14-.07zm13.4-7.7-2.9-2.9 2.9-2.9 4.1 2.35c.8.46.8 1.64 0 2.1l-4.1 2.35zM5.41.96l8.27 8.27L5.41 17.5V.96zm8.27 13.81 2.9 2.9-8.27 4.79 5.37-7.69z"/>
+        </svg>
+        <span class="label">
+          <span class="eyebrow">Get it on</span>
+          <span class="name">Google Play</span>
+        </span>
+      </a>
+    </div>
+
+    <p class="foot">
+      {{ site.data.legal.entity_name }} ·
+      <a href="{{ '/' | relative_url }}">Legal</a>
+    </p>
+  </main>
+</body>
+</html>
