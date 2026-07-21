@@ -1,8 +1,4 @@
-# Dot Clash app / store links — edit once, reuse across pages.
+# Dot Clash store links for the /download page.
 app_name: "Dot Clash"
-tagline: "The classic Dots and Boxes game — challenge friends on iOS and Android."
-package_name: "com.vividmemories.dotclash"
-# Replace with the real App Store ID when published.
-app_store_url: "https://apps.apple.com/app/id0000000000"
-play_store_url: "https://play.google.com/store/apps/details?id=com.vividmemories.dotclash"
-download_path: "/download/"
+app_store_url: "https://apps.apple.com/us/app/dot-clash-arena/id6774297753"
+play_store_url: "https://play.google.com/store/apps/details?id=com.vividmemories.dotclash&pli=1"

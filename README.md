@@ -38,7 +38,7 @@ Published URLs (with `permalink: pretty`):
 | Privacy Choices | `/privacy-choices/` |
 | Download | `/download/` |
 
-Share **`/download/`** when you want one link with App Store and Google Play buttons. Edit store URLs in **`_data/app.yml`**.
+Share **`/download/`** when you want one link that opens Dot Clash’s App Store / Google Play artwork with tappable store badges. Edit store URLs in **`_data/app.yml`**.
 
 Use the **Privacy Policy** URL in AdMob UMP and store privacy forms. Use **Delete Your Data** and **Contact** URLs in App Store / Play Console compliance fields.
 
@@ -47,8 +47,9 @@ Use the **Privacy Policy** URL in AdMob UMP and store privacy forms. Use **Delet
 | Path | Purpose |
 |------|---------|
 | `_data/legal.yml` | Shared placeholders (edit once) |
-| `_data/app.yml` | App Store / Play Store URLs |
-| `download/index.html` | Shareable download page with store buttons |
+| `_data/app.yml` | App Store / Play Store URLs for `/download/` |
+| `assets/images/dot-clash-download.jpg` | Promo artwork used by the download page |
+| `download/index.html` | Shareable download page (image + badge hotspots) |
 | `privacy-policy.md` | AdMob / store privacy URL |
 | `terms-and-conditions.md` | Terms of service |
 | `eula.md` | Optional license |
