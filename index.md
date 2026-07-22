@@ -8,6 +8,8 @@ description: Dot Clash privacy policy, terms of service, and related legal docum
 
 Official legal documents for **Dot Clash**, the Dots and Boxes mobile game for iOS and Android.
 
+<p><a href="{{ '/download/' | relative_url }}">Download Dot Clash</a> for iOS and Android.</p>
+
 <ul class="legal-index">
   <li>
     <a href="{{ site.data.legal.privacy_policy_path | relative_url }}">Privacy Policy</a><br>

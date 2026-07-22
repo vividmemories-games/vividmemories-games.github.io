@@ -36,10 +36,9 @@ Published URLs (with `permalink: pretty`):
 | Contact Us | `/contact/` |
 | Delete Your Data | `/delete-data/` |
 | Privacy Choices | `/privacy-choices/` |
-| Download (image hotspots) | `/download/` |
-| Download2 (responsive HTML) | `/download2/` |
+| Download | `/download/` |
 
-Share **`/download/`** for the image-hotspot version, or **`/download2/`** for the responsive HTML landing page (compare, then keep one). Store URLs live in **`_data/app.yml`**.
+Share **`/download/`** as the store landing page. Store URLs live in **`_data/app.yml`**.
 
 Use the **Privacy Policy** URL in AdMob UMP and store privacy forms. Use **Delete Your Data** and **Contact** URLs in App Store / Play Console compliance fields.
 
@@ -49,9 +48,9 @@ Use the **Privacy Policy** URL in AdMob UMP and store privacy forms. Use **Delet
 |------|---------|
 | `_data/legal.yml` | Shared placeholders (edit once) |
 | `_data/app.yml` | App Store / Play Store URLs for `/download/` |
-| `assets/images/dot-clash-download.jpg` | Promo artwork used by the download page |
-| `download/index.html` | Image-based download page (badge hotspots) |
-| `download2/index.html` | Responsive HTML download page (compare candidate) |
+| `assets/css/main.css` | Shared legal-site styles (dark Dot Clash theme) |
+| `assets/images/` | Download promo art, store badges, app icon |
+| `download/index.html` | Marketing download landing page |
 | `privacy-policy.md` | AdMob / store privacy URL |
 | `terms-and-conditions.md` | Terms of service |
 | `eula.md` | Optional license |
