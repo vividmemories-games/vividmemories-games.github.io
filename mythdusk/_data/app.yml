@@ -1,0 +1,6 @@
+# MythDusk store links for the /download page.
+# Replace placeholders when store listings are live.
+app_name: "MythDusk"
+package_id: "com.vividmemories.mythdusk"
+app_store_url: "https://apps.apple.com/app/mythdusk/id0000000000"
+play_store_url: "https://play.google.com/store/apps/details?id=com.vividmemories.mythdusk"

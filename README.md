@@ -1,11 +1,15 @@
-# Dot Clash — Legal site (Jekyll)
+# vividmemories-games.github.io
 
-Static legal pages for Dot Clash. Published at **https://vividmemories-games.github.io** via GitHub Pages (this repo).
+Org GitHub Pages site for Vivid Memories Games apps.
 
-## Setup
+| App | Path |
+|-----|------|
+| **Dot Clash** | `/` (site root) |
+| **MythDusk** | `/mythdusk/` |
 
-1. Edit **`_data/legal.yml`** — entity name, email, address, dates, `personalized_ads`, etc.
-2. Install Ruby, then:
+## Local preview
+
+### Dot Clash (root)
 
 ```bash
 bundle install
@@ -14,17 +18,27 @@ bundle exec jekyll serve
 
 Open [http://localhost:4000](http://localhost:4000).
 
-## GitHub Pages
+### MythDusk
 
-This repo is a **user/org site** (`vividmemories-games.github.io`). Jekyll source is the **repo root** (not `/docs`).
+```bash
+cd mythdusk
+bundle install
+bundle exec jekyll serve --baseurl /mythdusk
+```
 
-1. Repo → **Settings** → **Pages** → **Build and deployment**
-2. **Source:** GitHub Actions (uses `.github/workflows/pages.yml`)
-3. Push to `main` — the workflow builds and deploys
+Open [http://localhost:4000/mythdusk/](http://localhost:4000/mythdusk/).
 
-If you previously used **Deploy from branch → `/docs`**, switch to **GitHub Actions** or set the folder to **`/ (root)`**. The `/docs` setting causes `style.scss` / missing-directory build failures because this site has no `docs/` folder.
+## Deploy
 
-Published URLs (with `permalink: pretty`):
+Push to `main`. `.github/workflows/pages.yml` builds Dot Clash into `_site/` and MythDusk into `_site/mythdusk/`, then deploys both.
+
+Keep these at the **domain root** (Dot Clash / platform requirements):
+
+- `app-ads.txt`
+- `.well-known/` (e.g. Android App Links)
+- `apple-app-site-association`
+
+## Dot Clash URLs
 
 | Page | Path |
 |------|------|
@@ -38,34 +52,23 @@ Published URLs (with `permalink: pretty`):
 | Privacy Choices | `/privacy-choices/` |
 | Download | `/download/` |
 
-Share **`/download/`** as the store landing page. Store URLs live in **`_data/app.yml`**.
+Edit `_data/legal.yml` and `_data/app.yml`.
 
-Use the **Privacy Policy** URL in AdMob UMP and store privacy forms. Use **Delete Your Data** and **Contact** URLs in App Store / Play Console compliance fields.
+## MythDusk URLs
 
-## Files
+| Page | Path |
+|------|------|
+| Index | `/mythdusk/` |
+| Privacy Policy | `/mythdusk/privacy-policy/` |
+| Terms | `/mythdusk/terms-and-conditions/` |
+| EULA | `/mythdusk/eula/` |
+| Cookie Policy | `/mythdusk/cookie-policy/` |
+| Contact Us | `/mythdusk/contact/` |
+| Delete Your Data | `/mythdusk/delete-data/` |
+| Privacy Choices | `/mythdusk/privacy-choices/` |
+| Download | `/mythdusk/download/` |
 
-| Path | Purpose |
-|------|---------|
-| `_data/legal.yml` | Shared placeholders (edit once) |
-| `_data/app.yml` | App Store / Play Store URLs for `/download/` |
-| `assets/css/main.css` | Shared legal-site styles (dark Dot Clash theme) |
-| `assets/images/` | Download promo art, store badges, app icon |
-| `download/index.html` | Marketing download landing page |
-| `privacy-policy.md` | AdMob / store privacy URL |
-| `terms-and-conditions.md` | Terms of service |
-| `eula.md` | Optional license |
-| `cookie-policy.md` | Website cookies only |
-| `contact.md` | Support (in-app form primary) |
-| `delete-data.md` | In-app deletion instructions |
-| `privacy-choices.md` | Ad consent / privacy choices |
-
-## Dot Clash app repo
-
-The Flutter app lives in a separate repo (`Dot_Clash`). Legal URL constants in `lib/core/env/app_env.dart` must match this site.
-
-## Personalized ads
-
-In `_data/legal.yml`, set `personalized_ads: true` only if AdMob serves personalized ads (requires iOS ATT). The Privacy Policy body switches automatically.
+Edit `mythdusk/_data/legal.yml` and `mythdusk/_data/app.yml`.
 
 ## Not legal advice
 

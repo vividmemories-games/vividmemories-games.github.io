@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="theme-color" content="#0B1C24">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="icon" href="{{ '/assets/images/mythdusk-icon.png' | relative_url }}" type="image/png">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-brand" href="{{ '/' | relative_url }}">
+        <img
+          src="{{ '/assets/images/mythdusk-icon.png' | relative_url }}"
+          width="1024"
+          height="1024"
+          alt=""
+        />
+        <span class="site-title">Myth<span class="accent">Dusk</span></span>
+      </a>
+      <nav aria-label="Legal pages">
+        <a href="{{ site.data.legal.privacy_policy_path | relative_url }}">Privacy</a>
+        <a href="{{ site.data.legal.terms_path | relative_url }}">Terms</a>
+        <a href="{{ site.data.legal.eula_path | relative_url }}">EULA</a>
+        <a href="{{ site.data.legal.cookie_policy_path | relative_url }}">Cookies</a>
+        <a href="{{ site.data.legal.contact_path | relative_url }}">Contact</a>
+        <a href="{{ '/download/' | relative_url }}">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap legal-content">
+    {% if page.show_updated %}
+    <p class="last-updated"><strong>Last updated:</strong> {{ site.data.legal.effective_date }}</p>
+    {% endif %}
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>{{ site.data.legal.entity_name }} · <a href="mailto:{{ site.data.legal.contact_email }}">{{ site.data.legal.contact_email }}</a></p>
+      <p class="fine-print">Draft policies for MythDusk. Not legal advice.</p>
+    </div>
+  </footer>
+</body>
+</html>

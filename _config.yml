@@ -15,12 +15,14 @@ url: "https://vividmemories-games.github.io"
 # baseurl: ""
 
 exclude:
-  - legal/
+  - mythdusk/
   - README.md
   - Gemfile
   - Gemfile.lock
+  - vendor/
 
 include:
   - .well-known
+  - apple-app-site-association
 
 plugins: []

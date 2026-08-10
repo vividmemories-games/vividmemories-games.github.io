@@ -1,0 +1,69 @@
+---
+permalink: /404.html
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page not found · MythDusk Legal</title>
+  <meta name="theme-color" content="#0B1C24" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: "Source Serif 4", Georgia, serif;
+      background:
+        radial-gradient(ellipse 70% 45% at 20% 10%, rgba(42, 107, 122, 0.28), transparent 55%),
+        #0B1C24;
+      color: #E8E0D0;
+      padding: 24px;
+      text-align: center;
+    }
+    .panel {
+      max-width: 420px;
+      border: 1px solid rgba(212, 168, 75, 0.35);
+      border-radius: 12px;
+      padding: 28px 24px;
+      background: rgba(18, 40, 50, 0.75);
+    }
+    h1 {
+      font-family: "Cinzel", serif;
+      font-size: 1.45rem;
+      margin: 0 0 8px;
+      letter-spacing: 0.04em;
+    }
+    p { color: #A89B86; line-height: 1.5; margin: 0.6rem 0 0; }
+    a.btn {
+      display: inline-block;
+      margin: 18px 6px 0;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      background: #D4A84B;
+      color: #0B1C24;
+    }
+    a.secondary {
+      background: transparent;
+      border: 1px solid rgba(232, 224, 208, 0.28);
+      color: #E8E0D0;
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>Path lost at dusk</h1>
+    <p>This page does not exist on the MythDusk legal site.</p>
+    <a class="btn" href="{{ '/' | relative_url }}">Legal home</a>
+    <a class="btn secondary" href="{{ '/download/' | relative_url }}">Download</a>
+  </div>
+</body>
+</html>

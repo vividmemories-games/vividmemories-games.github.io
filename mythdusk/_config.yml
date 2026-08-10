@@ -1,0 +1,24 @@
+title: MythDusk Legal
+description: Privacy Policy, Terms, and legal notices for MythDusk
+lang: en
+timezone: UTC
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+permalink: pretty
+
+# Served under vividmemories-games.github.io/mythdusk
+url: "https://vividmemories-games.github.io"
+baseurl: "/mythdusk"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .github/
+
+plugins: []

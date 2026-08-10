@@ -1,0 +1,525 @@
+---
+layout: null
+title: Download MythDusk
+description: A turn-based puzzle RPG at dusk. Download MythDusk for iOS and Android.
+permalink: /download/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}" />
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:description" content="{{ page.description }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+  <meta property="og:image" content="{{ '/assets/images/mythdusk-icon.png' | absolute_url }}" />
+  <meta name="theme-color" content="#0B1C24" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="{{ '/assets/images/mythdusk-icon.png' | relative_url }}" type="image/png" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0B1C24;
+      --ink: #E8E0D0;
+      --muted: #A89B86;
+      --teal: #2A6B7A;
+      --teal-bright: #3D8FA0;
+      --gold: #D4A84B;
+      --gold-soft: #E8C878;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: "Source Serif 4", Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 80% 55% at 20% 10%, rgba(42, 107, 122, 0.28), transparent 55%),
+        radial-gradient(ellipse 60% 45% at 85% 35%, rgba(212, 168, 75, 0.14), transparent 50%),
+        linear-gradient(165deg, #0B1C24 0%, #122832 42%, #0A181F 100%);
+      overflow-x: hidden;
+    }
+
+    .glow-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(55px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    .glow-orb.one {
+      width: min(42vw, 28rem);
+      height: min(42vw, 28rem);
+      background: rgba(42, 107, 122, 0.45);
+      top: -8%;
+      right: 6%;
+      animation: float 10s ease-in-out infinite;
+    }
+
+    .glow-orb.two {
+      width: min(36vw, 22rem);
+      height: min(36vw, 22rem);
+      background: rgba(212, 168, 75, 0.28);
+      bottom: 18%;
+      left: -4%;
+      animation: float 12s ease-in-out infinite reverse;
+    }
+
+    .parchment {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.12;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(232, 200, 120, 0.35) 0.8px, transparent 1.2px),
+        radial-gradient(circle at 70% 60%, rgba(61, 143, 160, 0.3) 0.6px, transparent 1px);
+      background-size: 36px 36px, 24px 24px;
+      mask-image: radial-gradient(ellipse 75% 65% at 50% 30%, #000 10%, transparent 75%);
+    }
+
+    .top-nav {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem 1.25rem;
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 1rem clamp(1.25rem, 4vw, 3rem) 0;
+    }
+
+    .top-nav .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      text-decoration: none;
+      color: var(--ink);
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+    }
+
+    .top-nav .brand-link img {
+      width: 1.85rem;
+      height: 1.85rem;
+      border-radius: 22%;
+    }
+
+    .top-nav .brand-link .accent { color: var(--gold); }
+
+    .top-nav nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .top-nav nav a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .top-nav nav a:hover,
+    .top-nav nav a:focus-visible {
+      color: var(--gold-soft);
+      outline: none;
+    }
+
+    .page { position: relative; z-index: 1; }
+
+    .hero {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: clamp(1.25rem, 4vw, 3rem);
+    }
+
+    .copy {
+      max-width: 34rem;
+      animation: rise 0.75s ease-out both;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal-bright);
+    }
+
+    .brand {
+      margin: 0;
+      font-family: "Cinzel", serif;
+      font-weight: 800;
+      font-size: clamp(2.8rem, 8vw, 5.2rem);
+      line-height: 0.95;
+      letter-spacing: 0.04em;
+      color: #F2EADB;
+      text-shadow: 0 0 28px rgba(212, 168, 75, 0.25);
+    }
+
+    .brand .accent {
+      color: var(--gold);
+      text-shadow:
+        0 0 12px rgba(212, 168, 75, 0.55),
+        0 0 34px rgba(212, 168, 75, 0.25);
+    }
+
+    .headline {
+      margin: 1.1rem 0 0;
+      font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .lede {
+      margin: 0.7rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.8vw, 1.12rem);
+      line-height: 1.55;
+      max-width: 28rem;
+    }
+
+    .stores {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.85rem;
+      animation: rise 0.75s ease-out 0.12s both;
+    }
+
+    .store-badge {
+      display: block;
+      line-height: 0;
+      transition: transform 0.2s ease, filter 0.2s ease;
+      border-radius: 0.55rem;
+    }
+
+    .store-badge img {
+      display: block;
+      height: 3.15rem;
+      width: auto;
+      max-width: 100%;
+    }
+
+    .store-badge:hover,
+    .store-badge:focus-visible {
+      transform: translateY(-2px) scale(1.03);
+      filter: drop-shadow(0 0 16px rgba(212, 168, 75, 0.4));
+      outline: none;
+    }
+
+    .store-badge:focus-visible {
+      box-shadow: 0 0 0 3px rgba(212, 168, 75, 0.55);
+    }
+
+    .visual {
+      position: relative;
+      display: grid;
+      place-items: center;
+      animation: rise 0.85s ease-out 0.18s both;
+    }
+
+    .visual::before {
+      content: "";
+      position: absolute;
+      width: 78%;
+      height: 78%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 168, 75, 0.28), transparent 65%);
+      filter: blur(22px);
+      z-index: 0;
+    }
+
+    .visual img {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 420px);
+      height: auto;
+      display: block;
+      border-radius: 22%;
+      filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55));
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .note {
+      margin-top: 1.6rem;
+      font-size: 0.85rem;
+      color: rgba(168, 155, 134, 0.95);
+      animation: rise 0.75s ease-out 0.28s both;
+    }
+
+    .note a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .note a:hover { text-decoration: underline; }
+
+    .story {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+      padding: clamp(2.5rem, 7vw, 5rem) clamp(1.25rem, 4vw, 3rem);
+      display: grid;
+      gap: clamp(2.5rem, 6vw, 4rem);
+    }
+
+    .story-block {
+      max-width: 36rem;
+      margin: 0 auto;
+      text-align: center;
+      animation: rise 0.8s ease-out both;
+    }
+
+    .story-block h2 {
+      margin: 0;
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      font-size: clamp(1.55rem, 3.5vw, 2.1rem);
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      color: #F2EADB;
+    }
+
+    .story-block p {
+      margin: 0.85rem 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+
+    .closing {
+      text-align: center;
+      padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 4vw, 3rem) clamp(2rem, 5vw, 3rem);
+      animation: rise 0.75s ease-out both;
+    }
+
+    .closing h2 {
+      margin: 0;
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+      line-height: 1.2;
+      color: #F2EADB;
+    }
+
+    .closing .stores {
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .closing .note { margin-top: 1.75rem; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        min-height: auto;
+        padding-top: clamp(1.5rem, 5vw, 2.5rem);
+        padding-bottom: 1.5rem;
+      }
+
+      .copy {
+        max-width: 36rem;
+        order: 1;
+      }
+
+      .visual {
+        order: 2;
+        width: min(100%, 300px);
+        margin-top: 0.5rem;
+      }
+
+      .visual img { width: min(100%, 280px); }
+
+      .lede {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .stores { justify-content: center; }
+      .note { text-align: center; }
+
+      .top-nav {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .top-nav nav {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .stores {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .store-badge img { height: 2.85rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .copy, .stores, .visual, .note, .glow-orb, .visual img,
+      .story-block, .closing {
+        animation: none;
+      }
+      .store-badge { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-orb one" aria-hidden="true"></div>
+  <div class="glow-orb two" aria-hidden="true"></div>
+  <div class="parchment" aria-hidden="true"></div>
+
+  <header class="top-nav">
+    <a class="brand-link" href="{{ '/' | relative_url }}">
+      <img
+        src="{{ '/assets/images/mythdusk-icon.png' | relative_url }}"
+        width="1024"
+        height="1024"
+        alt=""
+      />
+      <span>Myth<span class="accent">Dusk</span></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="{{ '/' | relative_url }}">Legal</a>
+      <a href="{{ site.data.legal.privacy_policy_path | relative_url }}">Privacy</a>
+      <a href="{{ site.data.legal.terms_path | relative_url }}">Terms</a>
+      <a href="{{ site.data.legal.contact_path | relative_url }}">Contact</a>
+    </nav>
+  </header>
+
+  <div class="page">
+    <main class="hero">
+      <section class="copy">
+        <p class="eyebrow">Turn-based puzzle RPG</p>
+        <h1 class="brand">Myth<span class="accent">Dusk</span></h1>
+        <p class="headline">Match. Cast. Conquer the campaign.</p>
+        <p class="lede">
+          Match tiles for Attack, Mana, Healing, Shield, and Ultimate — then spend them on hero skills through chapters, bosses, and weekly challenges.
+        </p>
+
+        <div class="stores">
+          <a class="store-badge" href="{{ site.data.app.app_store_url }}" target="_blank" rel="noopener noreferrer">
+            <img
+              src="{{ '/assets/images/badge-app-store.png' | relative_url }}"
+              width="816"
+              height="200"
+              alt="Download on the App Store"
+            />
+          </a>
+          <a class="store-badge play" href="{{ site.data.app.play_store_url }}" target="_blank" rel="noopener noreferrer">
+            <img
+              src="{{ '/assets/images/badge-google-play.png' | relative_url }}"
+              width="816"
+              height="200"
+              alt="Get it on Google Play"
+            />
+          </a>
+        </div>
+
+        <p class="note">
+          {{ site.data.legal.entity_name }} ·
+          <a href="{{ '/' | relative_url }}">Legal</a> ·
+          <a href="{{ site.data.legal.privacy_policy_path | relative_url }}">Privacy</a> ·
+          <a href="{{ site.data.legal.contact_path | relative_url }}">Contact</a>
+        </p>
+      </section>
+
+      <div class="visual">
+        <img
+          src="{{ '/assets/images/mythdusk-icon.png' | relative_url }}"
+          width="1024"
+          height="1024"
+          alt="MythDusk app icon — compass, dusk castle, and puzzle gems"
+        />
+      </div>
+    </main>
+
+    <section class="story" aria-label="About MythDusk">
+      <article class="story-block">
+        <h2>Resources from the board. Skills from your heroes.</h2>
+        <p>
+          Matching never deals direct damage — it fuels your loadout. Spend resources and AP on skills, clear campaign nodes, earn chapter medals, and prep for weekly challenges.
+        </p>
+      </article>
+      <article class="story-block">
+        <h2>Built for a long dusk campaign.</h2>
+        <p>
+          Unlock heroes, tune skill loadouts, and carry progress with guest play or Google and Apple sign-in. Online real-time multiplayer is not offered unless announced later.
+        </p>
+      </article>
+    </section>
+
+    <section class="closing">
+      <h2>Enter the dusk</h2>
+      <div class="stores">
+        <a class="store-badge" href="{{ site.data.app.app_store_url }}" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ '/assets/images/badge-app-store.png' | relative_url }}"
+            width="816"
+            height="200"
+            alt="Download on the App Store"
+          />
+        </a>
+        <a class="store-badge play" href="{{ site.data.app.play_store_url }}" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ '/assets/images/badge-google-play.png' | relative_url }}"
+            width="816"
+            height="200"
+            alt="Get it on Google Play"
+          />
+        </a>
+      </div>
+      <p class="note">
+        {{ site.data.legal.entity_name }} ·
+        <a href="{{ '/' | relative_url }}">Legal</a> ·
+        <a href="{{ site.data.legal.privacy_policy_path | relative_url }}">Privacy</a> ·
+        <a href="{{ site.data.legal.contact_path | relative_url }}">Contact</a>
+      </p>
+    </section>
+  </div>
+</body>
+</html>

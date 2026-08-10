@@ -21,14 +21,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+      - name: Build Dot Clash (site root)
+        run: |
+          bundle install
+          bundle exec jekyll build --destination _site
+
+      - name: Build MythDusk (/mythdusk)
+        working-directory: mythdusk
+        run: |
+          bundle install
+          bundle exec jekyll build --destination ../_site/mythdusk
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
 
   deploy:
     needs: build
