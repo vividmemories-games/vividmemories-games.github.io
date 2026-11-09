@@ -3,12 +3,18 @@
 
 entity_name: "vividmemories-games"
 contact_email: "vividmemoriesgames@gmail.com"
-postal_address: "Swixgata 14, 1473 Lorenskog, Norway"
+# Leave blank for public pages; provide a PO box / business address later if needed.
+# Do not publish a home address here.
+postal_address: ""
+
 website_url: "https://vividmemories-games.github.io/mythdusk"
-effective_date: "2026-08-10"
+effective_date: "2026-11-09"
 deletion_sla: "30 days"
 governing_law: "Norwegian law"
 jurisdiction: "Norway"
+
+# Soft launch: MythDusk does not ship AdMob yet. Set true before enabling ads.
+ads_enabled: false
 
 # AdMob A3: set true only if you serve personalized ads (+ iOS ATT).
 personalized_ads: false

@@ -13,7 +13,7 @@ Official legal documents for **MythDusk**, a turn-based puzzle RPG for iOS and A
 <ul class="legal-index">
   <li>
     <a href="{{ site.data.legal.privacy_policy_path | relative_url }}">Privacy Policy</a><br>
-    <span>Ads (AdMob), Firebase, account data, and your rights.</span>
+    <span>{% if site.data.legal.ads_enabled %}Ads (AdMob), Firebase, account data, and your rights.{% else %}Firebase, account data, in-app purchases, and your rights. Soft launch builds do not show ads.{% endif %}</span>
   </li>
   <li>
     <a href="{{ site.data.legal.terms_path | relative_url }}">Terms and Conditions</a><br>
@@ -29,15 +29,15 @@ Official legal documents for **MythDusk**, a turn-based puzzle RPG for iOS and A
   </li>
   <li>
     <a href="{{ site.data.legal.contact_path | relative_url }}">Contact Us</a><br>
-    <span>Support via the app or email.</span>
+    <span>Support via Settings in the app or email.</span>
   </li>
   <li>
     <a href="{{ site.data.legal.delete_data_path | relative_url }}">Delete Your Data</a><br>
-    <span>In-app account deletion instructions.</span>
+    <span>How to request account and cloud data deletion.</span>
   </li>
   <li>
     <a href="{{ site.data.legal.privacy_choices_path | relative_url }}">Privacy Choices</a><br>
-    <span>Ad consent and privacy settings.</span>
+    <span>{% if site.data.legal.ads_enabled %}Ad consent and privacy settings.{% else %}Privacy settings and how we will handle ad consent if ads ship later.{% endif %}</span>
   </li>
 </ul>
 

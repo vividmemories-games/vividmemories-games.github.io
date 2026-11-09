@@ -21,12 +21,14 @@ By using the App, you agree to this Privacy Policy. If you do not agree, do not 
 - **Package / bundle ID:** `com.vividmemories.mythdusk`
 - **Developer:** {{ legal.entity_name }}
 - **Email:** [{{ legal.contact_email }}](mailto:{{ legal.contact_email }})
-- **Address:** {{ legal.postal_address }}
-- **Website:** {{ legal.website_url }}
+{% if legal.postal_address != "" %}- **Address:** {{ legal.postal_address }}
+{% else %}- **Postal address:** Available on request by email
+{% endif %}- **Website:** {{ legal.website_url }}
+
 
 ## Scope
 
-This policy applies to the App and related services (cloud save, in-app purchases, advertising). It does not apply to third-party websites or services you open through links in the App.
+This policy applies to the App and related services (cloud save, in-app purchases{% if legal.ads_enabled %}, advertising{% endif %}). It does not apply to third-party websites or services you open through links in the App.
 
 ## Information you provide
 
@@ -45,8 +47,8 @@ We store gameplay and progression data linked to your account in **Google Fireba
 - Hero unlocks, equipped skill loadouts, and personality upgrades
 - Prep inventory, weekly challenge completion keys, and chapter medal progress/claims
 - Cosmetic / owned items if any
-- Remove Ads / other in-app purchase entitlements if offered
-- Timestamps for rewards, daily/weekly claims, and optional ad-based rewards
+- In-app purchase entitlements (for example starter packs{% if legal.ads_enabled %}, Remove Ads{% endif %}) when offered
+- Timestamps for rewards, daily/weekly claims{% if legal.ads_enabled %}, and optional ad-based rewards{% endif %}
 
 ## Information collected automatically
 
@@ -57,6 +59,8 @@ We store gameplay and progression data linked to your account in **Google Fireba
 - Local settings on your device (for example sound and haptics preferences)
 
 ## Advertising
+
+{% if legal.ads_enabled %}
 
 We use **Google AdMob**, including:
 
@@ -81,9 +85,22 @@ We use **non-personalized ads** only. Ads are not tailored to you based on cross
 
 If you purchase **Remove Ads** (where offered), interstitial ads stop. Rewarded ads may still appear only if you choose to watch them for in-game benefits.
 
+{% else %}
+
+The current soft-launch / closed-test versions of MythDusk **do not show ads**. We do **not** currently integrate **Google AdMob**, load advertising identifiers for ads, or show UMP consent prompts for advertising.
+
+If we enable advertising in a future update, we expect to use **Google AdMob** (rewarded and/or interstitial ads). Before ads go live we will:
+
+- Update this Privacy Policy and store data-safety / privacy questionnaires
+- Update in-app Legal links and the [Privacy Choices]({{ site.data.legal.privacy_choices_path | absolute_url }}) page
+- Use consent flows where required (for example UMP in the EEA/UK/CH)
+- Default to **non-personalized** ads unless we change that setting and obtain required consent
+
+{% endif %}
+
 ## Payments
 
-Purchases are processed by **Apple App Store** or **Google Play**. We do not receive your full card number. We receive purchase confirmation and entitlement status (for example Remove Ads on your profile).
+Purchases are processed by **Apple App Store** or **Google Play**. We do not receive your full card number. We receive purchase confirmation and entitlement status for items you buy (for example gem packs or other shop offers).
 
 ## How we use information
 
@@ -92,8 +109,8 @@ We use information to:
 - Provide and operate the App (gameplay, saves, campaigns, weekly challenges, hero progression)
 - Authenticate you and sync progress when you sign in
 - Process in-app purchases and restore purchases
-- Show ads and measure ad performance (AdMob)
-- Analyze usage and improve the App (Firebase Analytics)
+{% if legal.ads_enabled %}- Show ads and measure ad performance (AdMob)
+{% endif %}- Analyze usage and improve the App (Firebase Analytics)
 - Detect, prevent, and address fraud, abuse, and technical issues (App Check, security rules)
 - Fix crashes and improve stability (Crashlytics)
 - Comply with law and enforce our Terms
@@ -104,11 +121,11 @@ We use information to:
 Where GDPR applies, we rely on:
 
 - **Contract** — to provide the App and features you request
-- **Legitimate interests** — security, analytics, improving the App{% unless legal.personalized_ads %}, non-personalized advertising{% endunless %}
-- **Consent** — where required for ads (UMP) and, if applicable, personalized ads or iOS tracking
-- **Legal obligation** — when we must comply with law
+- **Legitimate interests** — security, analytics, improving the App{% if legal.ads_enabled %}{% unless legal.personalized_ads %}, non-personalized advertising{% endunless %}{% endif %}
+{% if legal.ads_enabled %}- **Consent** — where required for ads (UMP) and, if applicable, personalized ads or iOS tracking
+{% endif %}- **Legal obligation** — when we must comply with law
 
-You may withdraw consent for ads where applicable; withdrawal does not affect processing already performed.
+{% if legal.ads_enabled %}You may withdraw consent for ads where applicable; withdrawal does not affect processing already performed.{% endif %}
 
 ## Who we share with
 
@@ -117,8 +134,8 @@ We do not sell your personal information for money. We use processors including:
 | Provider | Purpose |
 |----------|---------|
 | **Google Firebase** (Auth, Firestore, Analytics, Crashlytics, App Check, Cloud Functions) | Account, cloud save, analytics, crashes, server logic |
-| **Google AdMob** (and advertising partners) | Advertising |
-| **Google / Apple** | Sign-in and in-app purchase processing |
+{% if legal.ads_enabled %}| **Google AdMob** (and advertising partners) | Advertising |
+{% endif %}| **Google / Apple** | Sign-in and in-app purchase processing |
 
 They may process data in the **United States** and other countries. We use contractual and technical safeguards where required by law.
 
@@ -128,12 +145,14 @@ We may also disclose information if required by law, to protect rights and safet
 
 - **Account data:** while your account is active and for a reasonable period afterward
 - **Analytics and crashes:** per Firebase/Google retention settings
-- **Ad-related data:** governed by Google’s policies and your consent settings
-- **Local data:** until you uninstall the App or clear app data
+{% if legal.ads_enabled %}- **Ad-related data:** governed by Google’s policies and your consent settings
+{% endif %}- **Local data:** until you uninstall the App or clear app data
 
 ## Your choices and rights
 
 Depending on your location, you may have rights to **access**, **correct**, **delete**, **restrict**, **object**, **portability**, and to **withdraw consent**.
+
+{% if legal.ads_enabled %}
 
 **Advertising choices**
 
@@ -142,11 +161,11 @@ Depending on your location, you may have rights to **access**, **correct**, **de
 - **Android:** Settings → Google → Ads
 - **Remove Ads:** Purchase in the shop (where offered) to disable interstitial ads
 
+{% endif %}
+
 **Account and data deletion**
 
-**In the app (recommended):** Open MythDusk → **Settings** → **Legal & privacy** → **Delete my account**. This immediately deletes your Firebase Authentication account and Firestore profile (progress and related cloud data). Local app data on the device is cleared when you sign out.
-
-**If you cannot use the app:** Email [{{ legal.contact_email }}](mailto:{{ legal.contact_email }}) with subject **"MythDusk Account Deletion"** and include your display name and sign-in method (Google, Apple, or guest). We will process the request within **{{ legal.deletion_sla }}**, except where we must retain data for legal obligations.
+Open MythDusk → **Settings** → **Legal** → **Delete your data**, then email [{{ legal.contact_email }}](mailto:{{ legal.contact_email }}) with subject **"MythDusk Account Deletion"** and include your display name and sign-in method (Google, Apple, or guest). We will process the request within **{{ legal.deletion_sla }}**, except where we must retain data for legal obligations.
 
 See [Delete your data]({{ site.data.legal.delete_data_path | absolute_url }}) for details.
 
@@ -178,4 +197,4 @@ We may update this Privacy Policy. We will post the new date at the top of this 
 
 **{{ legal.entity_name }}**  
 [{{ legal.contact_email }}](mailto:{{ legal.contact_email }})  
-{{ legal.postal_address }}
+{% if legal.postal_address != "" %}{{ legal.postal_address }}{% else %}Postal address available on request by email.{% endif %}

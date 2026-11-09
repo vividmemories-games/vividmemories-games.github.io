@@ -10,19 +10,21 @@ show_updated: true
 
 {% assign legal = site.data.legal %}
 
-Need help with MythDusk, your account, privacy, or ads?
+Need help with MythDusk, your account, privacy, purchases, or data requests?
 
 ## In the app (preferred)
 
 1. Open **MythDusk**
 2. Go to **Settings**
-3. Tap **Contact us**
-4. Tap **Email support** — your mail app opens with a pre-filled message
+3. Under **Legal**, tap **Contact us**
+4. Your mail app should open with a pre-filled **MythDusk Support** subject
 5. Describe your issue and send — we usually reply within a few business days
+
+If your device cannot open email, use the address below.
 
 ## Email directly
 
-If you cannot use the app, email [{{ legal.contact_email }}](mailto:{{ legal.contact_email }}).
+Email [{{ legal.contact_email }}](mailto:{{ legal.contact_email }}?subject=MythDusk%20Support).
 
 Include:
 
@@ -33,4 +35,4 @@ Include:
 ## Postal address
 
 **{{ legal.entity_name }}**  
-{{ legal.postal_address }}
+{% if legal.postal_address != "" %}{{ legal.postal_address }}{% else %}A postal address is available on request by email if you need one for a legal or regulatory matter.{% endif %}
