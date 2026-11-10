@@ -55,9 +55,13 @@ Hardcode these paths in the Flutter app (privacy, delete-data, contact, terms). 
 | `delete-data.md` | Account deletion instructions |
 | `privacy-choices.md` | Ad consent / privacy choices |
 
-## Personalized ads
+## Soft-launch ads flag
 
-In `_data/legal.yml`, set `personalized_ads: true` only if AdMob serves personalized ads (requires iOS ATT). Default is `false`.
+In `_data/legal.yml`:
+
+- Set `ads_enabled: true` only when AdMob ships in a live build. Soft launch defaults to `false` so privacy/terms copy stays honest.
+- Set `personalized_ads: true` only if AdMob serves personalized ads (requires iOS ATT). Default is `false`.
+
 
 ## Not legal advice
 

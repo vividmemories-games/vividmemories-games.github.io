@@ -45,22 +45,30 @@ The App includes virtual items such as **coins**, **lives** (or equivalent soft 
 - May be **modified, balanced, or removed** by us at any time
 - Do not create any property right in your favor
 
-We may grant items through gameplay, daily/weekly rewards, optional ads, or purchases.
+We may grant items through gameplay, daily/weekly rewards{% if legal.ads_enabled %}, optional ads{% endif %}, or purchases.
 
 ## In-app purchases
 
-The App may offer purchases such as **Remove Ads** (a non-consumable that removes **interstitial** advertisements as described in the App). Rewarded ads may remain available where you voluntarily watch them for in-game benefits.
+The App may offer digital purchases such as gem packs, starter offers, and other shop items described in the App{% if legal.ads_enabled %}, including **Remove Ads** (a non-consumable that removes **interstitial** advertisements where offered){% endif %}.
 
 - Purchases are processed by **Apple** or **Google**; their terms apply to billing and refunds.
 - Prices are shown in your local currency before purchase.
-- **Restore purchases** is available where supported by the platform.
+- **Restore purchases** is available where supported by the platform (Settings → Restore purchases).
 - Except as required by law or store policy, **all sales are final** for digital content delivered immediately. Refunds, if any, are handled solely by Apple or Google under their policies.
 
 ## Advertising
 
+{% if legal.ads_enabled %}
+
 The free version of the App may display ads via **Google AdMob**. Ad availability is not guaranteed. In the EEA/UK/CH you may be asked for consent through **UMP** where required.
 
 If you purchase Remove Ads (where offered), interstitial ads are disabled as described in the App. Misuse of ad rewards (for example exploiting bugs to obtain rewards without completing ads) is prohibited.
+
+{% else %}
+
+Current soft-launch / closed-test versions of MythDusk **do not display ads**. If we enable advertising later (for example via Google AdMob), we will update these Terms and the Privacy Policy before ads go live.
+
+{% endif %}
 
 ## Acceptable use
 
@@ -70,7 +78,7 @@ You agree **not** to:
 - Reverse engineer, decompile, or attempt to extract source code except as allowed by law
 - Interfere with servers, Firestore, or App Check
 - Use the App for any illegal purpose
-- Circumvent ad or purchase systems
+- Circumvent {% if legal.ads_enabled %}ad or {% endif %}purchase systems
 
 We may suspend or terminate access for violations.
 
@@ -82,7 +90,7 @@ You do not acquire ownership of any virtual items or content.
 
 ## Third-party services
 
-The App integrates third-party services (Firebase, AdMob, Google Sign-In, Apple Sign-In, app stores). Your use of those services is subject to their terms and privacy policies.
+The App integrates third-party services (Firebase, Google Sign-In, Apple Sign-In, app stores{% if legal.ads_enabled %}, AdMob{% endif %}). Your use of those services is subject to their terms and privacy policies.
 
 ## Disclaimer of warranties
 
@@ -128,6 +136,6 @@ If you are an EU consumer, you may also use the [EU Online Dispute Resolution pl
 
 **{{ legal.entity_name }}**  
 [{{ legal.contact_email }}](mailto:{{ legal.contact_email }})  
-{{ legal.postal_address }}
+{% if legal.postal_address != "" %}{{ legal.postal_address }}{% else %}Postal address available on request by email.{% endif %}
 
 Privacy Policy: [{{ privacy_url }}]({{ privacy_url }})

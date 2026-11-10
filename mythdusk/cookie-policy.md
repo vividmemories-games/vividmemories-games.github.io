@@ -43,4 +43,4 @@ We may update this Cookie Policy. The "Last updated" date at the top of this pag
 
 **{{ legal.entity_name }}**  
 [{{ legal.contact_email }}](mailto:{{ legal.contact_email }})  
-{{ legal.postal_address }}
+{% if legal.postal_address != "" %}{{ legal.postal_address }}{% else %}Postal address available on request by email.{% endif %}

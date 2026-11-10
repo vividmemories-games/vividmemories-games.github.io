@@ -11,26 +11,31 @@ show_updated: true
 {% assign legal = site.data.legal %}
 {% assign contact_url = site.data.legal.contact_path | absolute_url %}
 
-You can delete your MythDusk account and associated cloud data **immediately** from the app.
+You can request deletion of your MythDusk account and associated cloud data.
 
-## Delete in the app
+## From the app
 
 1. Open **MythDusk**
 2. Go to **Settings**
-3. Scroll to **Legal & privacy**
-4. Tap **Delete my account**
-5. Confirm — this cannot be undone
+3. Under **Legal**, tap **Delete your data** (opens this page)
+4. Email [{{ legal.contact_email }}](mailto:{{ legal.contact_email }}?subject=MythDusk%20Account%20Deletion) with subject **"MythDusk Account Deletion"**
+5. Include your display name and sign-in method (Google, Apple, or guest)
 
-We delete:
+We will process the request within **{{ legal.deletion_sla }}**, except where we must retain data for legal obligations (for example fraud prevention or tax records for purchases).
+
+## What we delete
+
+When we fulfill a valid deletion request, we delete or irreversibly anonymize:
 
 - Your Firebase Authentication account (guest, Google, or Apple)
 - Your Firestore profile (campaign progress, currency, heroes, prep inventory, entitlements, and related cloud data)
-- Local settings on that device after sign-out
 
-Deletion is **immediate** once you confirm. We may retain minimal records only where required by law (for example fraud prevention or tax records for purchases).
+Local settings on a device are cleared when you uninstall the app or clear app data.
 
 ## Cannot access the app?
 
-If you are locked out or the app will not open, email [{{ legal.contact_email }}](mailto:{{ legal.contact_email }}) with subject **"MythDusk Account Deletion"** and include your display name and sign-in method. We will process the request within **{{ legal.deletion_sla }}**.
+Email [{{ legal.contact_email }}](mailto:{{ legal.contact_email }}?subject=MythDusk%20Account%20Deletion) with the same subject and details. See also our [Contact page]({{ contact_url }}).
 
-See also our [Contact page]({{ contact_url }}).
+## Future in-app deletion
+
+One-tap in-app account deletion may be added in a later update. Until then, email is the supported path and is sufficient for store data-deletion requirements.
